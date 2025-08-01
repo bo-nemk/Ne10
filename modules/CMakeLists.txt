@@ -222,10 +222,13 @@ if(NE10_ENABLE_DSP)
         )
     else()
         add_definitions(-DNE10_UNROLL_LEVEL=1)
+        set(NE10_DSP_NEON_SRCS
+            ${NE10_DSP_NEON_SRCS}
+            ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonv8.S 
+        )
         set(NE10_DSP_INTRINSIC_SRCS
             ${NE10_DSP_INTRINSIC_SRCS}
             # ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonintrinsic.c
-            ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonv8.S 
             ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_int32.neonintrinsic.c
             ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_int16.neonintrinsic.c
             ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_rfft_float32.neonintrinsic.c
