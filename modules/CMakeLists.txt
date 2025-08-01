@@ -226,6 +226,11 @@ if(NE10_ENABLE_DSP)
             ${NE10_DSP_NEON_SRCS}
             ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonv8.S 
         )
+
+        set_source_files_properties(
+            ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonv8.S
+            PROPERTIES COMPILE_FLAGS "-fno-integrated-as")
+
         set(NE10_DSP_INTRINSIC_SRCS
             ${NE10_DSP_INTRINSIC_SRCS}
             # ${PROJECT_SOURCE_DIR}/modules/dsp/NE10_fft_float32.neonintrinsic.c

@@ -1,0 +1,2586 @@
+commit eaa8e71a8fc68bdfc6dcbd3ddfa0e9f204ecadc1
+Author: Niels <hidden@email.com>
+Date:   Fri Aug 1 11:19:27 2025 +0200
+
+    asdf
+
+commit 67f6941638083a09d128469df5f517306a69cfaa
+Author: Niels <hidden@email.com>
+Date:   Fri Aug 1 11:13:24 2025 +0200
+
+    asdf
+
+commit 1f059a764d0e1bc2481c0055c0e71538470baa83
+Author: giuliomoro <giuliomoro@yahoo.it>
+Date:   Thu Nov 15 13:20:13 2018 +0000
+
+    Remove unessential headers from public includes [take 2]. Closes projectNe10#212 (#215)
+    
+    Signed-off-by: Giulio Moro <giuliomoro@yahoo.it>
+
+commit f303d431d6366466ae118877c00228fa8ab50212
+Author: Robin Vobruba <hoijui.quaero@gmail.com>
+Date:   Sun Oct 14 12:51:27 2018 +0200
+
+    When cross compiling, we need to also install g++ (not just gcc) for arm
+    
+    Signed-off-by: Robin Vobruba <hoijui.quaero@gmail.com>
+
+commit faa5fd770e6a9412c5928b15b572a66592efd3e1
+Author: Robin Vobruba <hoijui.quaero@gmail.com>
+Date:   Sun Oct 14 12:48:57 2018 +0200
+
+    Fail fast with verbose error when trying to native compile on non-ARM
+    
+    Signed-off-by: Robin Vobruba <hoijui.quaero@gmail.com>
+
+commit 7c841510d54097288261209dccd72c051a9a56d5
+Author: Phil Wang <wzf0428@gmail.com>
+Date:   Fri Aug 3 22:35:52 2018 +0800
+
+    Fix invalid memory allocation check
+    
+    Signed-off-by: Phil Wang <wzf0428@gmail.com>
+
+commit 7dfcb6bad9f24eb5c902c30eb0e7de87f0c819bb
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Sat Apr 28 09:55:00 2018 -0700
+
+    Increase minimum iOS version to fix libc++ warning
+    
+    clang: warning: libstdc++ is deprecated; move to libc++ with a minimum
+    deployment target of iOS 7 [-Wdeprecated]
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 91fd8bd1a6126f7675f633a61aaf5668d0584d84
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Fri Apr 27 10:46:11 2018 -0700
+
+    Set TERM so we get color output on CircleCI
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 4b5d6f42852fc3d0d81eecba0ff29add5eb3d658
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Fri Apr 27 10:01:02 2018 -0700
+
+    Use size_t format specifier
+    
+    This should work for both 64-bit and 32-bit builds, where size_t is
+    different.
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit c8a3e931ccf8098f3d90311d6b2dc5c0f0ac4ab0
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Fri Apr 27 09:40:10 2018 -0700
+
+    Make sure to build unit tests on Linux
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 7904fff471bd31bf9514a46a12a4679a571537bb
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Fri Apr 27 09:18:20 2018 -0700
+
+    Don't explicitly link against stdc++
+    
+    On iOS linking against stdc++ generates a warning:
+    clang: warning: libstdc++ is deprecated; move to libc++ with a minimum
+    deployment target of iOS 7 [-Wdeprecated]
+    
+    The Android NDK also allows using libc++ instead of stdc++ (and is
+    moving to make that the default), so hardcoding to stdc++ causes
+    problems: https://developer.android.com/ndk/guides/cpp-support#libc
+    
+    The build now uses a C++ compiler to compile C++ files and will link the
+    appropriate stdlib, so we don't have to worry about the issue that
+    originally caused this line to be added:
+    https://github.com/projectNe10/Ne10/issues/112
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 55777969a094a1a3141fe4c1c8d8546d71918306
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Fri Apr 27 08:59:40 2018 -0700
+
+    Errors should fail the build
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit c97036097405df43fcdb1355d571836a84d1eb5a
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Tue Apr 10 20:41:08 2018 -0700
+
+    Fix warning
+    
+     format specifies type 'int' but the argument has type 'unsigned long'
+    [-Werror,-Wformat]
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit fc04d2aa18104f3503462b5148d5cdfd22b2ab25
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Tue Apr 10 20:38:08 2018 -0700
+
+    Fix warning
+    
+    using integer absolute value function 'abs' when argument is of floating
+    point type [-Werror,-Wabsolute-value]
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit b4e2985c096761f6363c40aebc1b6cd0c55dec45
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Tue Apr 10 20:35:45 2018 -0700
+
+    Fix warning
+    
+    equality comparison with extraneous parentheses
+    [-Werror,-Wparentheses-equality]
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit a1781ba262db33f18cfa82d4c7527f3526460090
+Merge: e8bf7f6 3838c81
+Author: Phil Wang <6736290+Phillip-Wang@users.noreply.github.com>
+Date:   Thu Apr 12 21:46:49 2018 +0800
+
+    Merge pull request #191 from thughes/circleci
+    
+    Add Linux build to CircleCI
+
+commit 3838c818f7b30950862e11a670c4e7cfd2d1113a
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Tue Apr 10 20:10:35 2018 -0700
+
+    Add build shield to README
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 7813f40eb9c606457395f73933f5028c641b2adc
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Tue Apr 10 19:07:02 2018 -0700
+
+    Fix fprintf format specifier for 64-bit build
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 0375c04b0e53353f069650f93c071d84e90c3798
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Mon Apr 9 18:53:51 2018 -0700
+
+    Add linux circleci build
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit e8bf7f633a7bb0c05f7e6e2ba8e1e3708f0d32e4
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Mon Apr 9 20:23:32 2018 -0700
+
+    root config.yml
+
+commit 5d6f503df6b5fc11fc79cda35070b2d73cc72645
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Mon Apr 9 08:30:42 2018 -0700
+
+    moving circleci.yml
+
+commit 58b5441eb82dfd51028ff541f8328e959205b461
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Mon Apr 9 08:29:30 2018 -0700
+
+    adding circleci continuous integration config file
+
+commit a2e290c44ebed7b91d94945a149faa4bed92c60e
+Merge: a4955ee 6032da4
+Author: Phil Wang <6736290+Phillip-Wang@users.noreply.github.com>
+Date:   Mon Apr 9 23:14:58 2018 +0800
+
+    Merge pull request #190 from thughes/circleci
+    
+    Fix Android and iOS builds
+
+commit 6032da4cd65403b2856dcfa1772d4cb0397df4bb
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Thu Apr 5 19:38:03 2018 -0700
+
+    Add CircleCI continuous integration build for Android and iOS
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 8c9d1a678baf2c51964a3974bdf5148bd8289b58
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Thu Apr 5 20:57:04 2018 -0700
+
+    Make android compile with modern NDK (r16b)
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit 90a8f08ccf72a072c522b66797796bcedfcb5dc6
+Author: Tom Hughes <tomtheengineer@gmail.com>
+Date:   Thu Apr 5 19:24:13 2018 -0700
+
+    Modern versions of Xcode can't target iOS 5.0
+    
+    https://stackoverflow.com/a/39632224/2442139
+    
+    Signed-off-by: Tom Hughes <tomtheengineer@gmail.com>
+
+commit a4955eea82385fd5f0e3bf4390992354161dc649
+Merge: a778f6d 8a0d1cb
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Tue Mar 27 20:50:50 2018 +0800
+
+    Merge pull request #143 from kraj/master
+    
+    CMakeLists.txt: Remove -mthumb-interwork
+
+commit a778f6dde5fbb3e8f9a3f45384ba5a525afba86c
+Merge: f793b5e c727560
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Mon Oct 16 13:45:54 2017 -0700
+
+    Merge pull request #178 from davidcunado-arm/dc/update_contributing
+    
+    Drop requirement for CLA in CONTRIBUTING.md
+
+commit c72756027496f7875719be42c921ba4833339781
+Author: David Cunado <david.cunado@arm.com>
+Date:   Sun Oct 15 09:41:49 2017 +0100
+
+    Drop requirement for CLA in CONTRIBUTING.md
+    
+    It is no longer necessary for contributors to send a CLA to ARM
+    before making contributions. Contributors must instead add a
+    "Signed-off-by:" line to each commit, which certifies that the
+    contribution is made under the Developer Certificate of Origin
+    (DCO).
+    
+    Update CONTRIBUTING.md to reflect this new policy and add a copy of
+    the DCO to the repository.
+    
+    Fixes projectNe10/Ne10/issues/177
+    
+    Signed-off-by: David Cunado <david.cunado@arm.com>
+
+commit f793b5e067737760798bd4928933ad6b87a09488
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Fri Jul 21 09:47:56 2017 -0700
+
+    removing email addresses
+    
+    too many irrelevant comments and questions that should be posted to the issue tracker are getting emailed
+
+commit a91757e3a349877939a8a274fb38cba389926d57
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Thu Jun 29 15:07:49 2017 +0100
+
+    expose hidden functionality to doxygen, improve box filter docs
+
+commit 3384c60746e103290555a15bf53037d75d6a5754
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Jun 28 16:39:34 2017 +0100
+
+    minor markdown documentation changes
+
+commit 16accc68a6c867c87c6cfb6d9e53418a44e87ab2
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Jun 28 15:40:18 2017 +0100
+
+    add R2C FFT sample, fix sample formatting
+
+commit 91f48afafa11b71f21c47fcf056a6e4675521450
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Jun 28 13:51:18 2017 +0100
+
+    fix broken contributing link in README
+
+commit cbb1ba7b53920c14447ea5eb9979f2eb3833d22e
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Jun 28 13:41:09 2017 +0100
+
+    improve doxygen docs, particularly for FFT and math functions
+    
+    - Greatly improve FFT documentation
+    - Clean up math function documentation
+    - Improve doxygen configuration
+    - Link the samples directory as examples in doxygen
+    - Fix incorrect documentation module hierarchy
+    - Remove stale documentation files (release notes, acknowledgements)
+    - Rename contributing.md to the more typical CONTRIBUTING.md
+
+commit d0d12943c9ad6d464d92e6a2e3e10513bd3a9334
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Mon Jun 26 16:17:52 2017 +0100
+
+    add support for R2C FFTs of 2 samples
+
+commit b778c6eec2ab6dbc0c9ad1517a9ff8675ba2bde8
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Mon Jun 26 13:43:48 2017 +0100
+
+    add support for C2C FFTs of 2 samples, R2C of 4 (fixes #169)
+
+commit 88c04e598780027ec8f538a40b3768717884b5d5
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Thu Jun 22 14:45:40 2017 +0100
+
+    fix incorrect cfg type in R2C FFT example usage
+
+commit 0c9f576b9435bfef78a9b98001db4e798b1b119c
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Tue Feb 28 14:31:09 2017 +0000
+
+    Fix R2C/C2R FFT documentation as per #156
+
+commit c2b050e5a084c7e55dd219a4678fe78e9c2b65ed
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Feb 24 10:08:19 2017 +0000
+
+    fix NEON auto-detection on 64-bit CPUs (closes #158)
+
+commit 2692c4c80554b38cbf1f2550305573137c6c2233
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Feb 10 11:25:00 2017 +0000
+
+    use exact-width integer types in NE10_types.h (fix #152)
+
+commit 4e65d0a3007833a635f4f9dd5cbeb73b19047aa8
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Thu Jan 12 09:49:57 2017 +0000
+
+    use -std=gnu99 for C compilation (see #146)
+
+commit f6a68e4bcbd5babb8eed609f780bed7d1a21d43d
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Nov 30 13:34:01 2016 +0000
+
+    fix CMake debug option in building.md
+
+commit 8a0d1cbfcc0649b2696c9cf20f877366de259ce3
+Author: Khem Raj <raj.khem@gmail.com>
+Date:   Sat Nov 12 18:15:26 2016 +0000
+
+    CMakeLists.txt: Remove -mthumb-interwork
+    
+    This option is meaningless with aapcs ABI
+    which is the default for Linux and android
+    for armv7+ architectures
+    
+    As an aside it helps in compiling with clang
+    where this option is absent
+    
+    Signed-off-by: Khem Raj <raj.khem@gmail.com>
+
+commit 18c4c982a595dad069cd8df4932aefb1d257591f
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Nov 9 11:03:33 2016 +0000
+
+    dump astyle, update coding style wiki links (fix #136)
+
+commit a96e52ae146a21f9c8594a5c3ef547edde491c96
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 17:10:30 2016 +0000
+
+    fix #138
+
+commit fee112eb2278469e7cfe2516dffa2ecfa5ad4c9a
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 16:31:26 2016 +0000
+
+    extend copyright year to 2016
+
+commit aa0c1dfd421b6d1cbdfb8ea46f3d6fc1b6ca6688
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 16:03:00 2016 +0000
+
+    fix errors when following build instructions on linux
+    
+    Fixes projectNe10/Ne10#97, fixes projectNe10/Ne10#109
+
+commit 7da2e9d818c2a7e653f1faf4cdc30dfa55e8afcc
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 16:01:37 2016 +0000
+
+    rewrite the build instructions
+
+commit 8d40ebde114f9d0e02af0a4e2f860aa22afa8834
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:55:30 2016 +0000
+
+    add basic linking instructions to README for newbies
+    
+    Also, fix an accidentally merged incorrect link (oops!).
+
+commit 60e855517e601cccc5a0a5e1c2e9bdd9553e9881
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:51:48 2016 +0000
+
+    increase focus on sample code
+
+commit 4b98117fea813270ed9e70267dc66e49ff8923cb
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:44:17 2016 +0000
+
+    improve README
+
+commit 2bff9fd36b6f2c621cd83af87ebad26687cdb5b1
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:36:27 2016 +0000
+
+    improve math documentation
+
+commit 7a931a92eed4ca5e3b37840cb14e245c5e69fade
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:34:41 2016 +0000
+
+    improve math function readability
+
+commit e33c401a228ba202e95a823322aad1812264dc97
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:28:01 2016 +0000
+
+    fix perf test time unit issues (resolve projectNe10/Ne10#129)
+
+commit 9bfd61f824c8cc52bdbaa40ca9f1c3255b835d81
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:22:21 2016 +0000
+
+    add dynamic unit tests, fix unit test cmake options
+
+commit d288ed2ad3824ddd0bd3dbb2c43a2a97e4c2ddf3
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 15:16:34 2016 +0000
+
+    make tests fail on array guard mismatch
+
+commit c72e4749c49100409bd13febea83cea2bc24679b
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:56:05 2016 +0000
+
+    add basic FFT testing for non-power-of-two input sizes
+    
+    Also, port the generic FFT fixes to work properly with the radix 8 changes.
+
+commit fb0dd830f6e07f4558e6d8d701dd34e097853206
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:49:02 2016 +0000
+
+    fix generic FFT C/NEON mismatch issues, part of projectNe10/Ne10#135
+
+commit e486965b0044c74d7e7777fd7109133c6a0eaeba
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:41:26 2016 +0000
+
+    better validate generic NEON FFT sizes, part of projectNe10/Ne10#135
+
+commit 5e382bbc4e04ef27ad06d32a80a3941cf28ca7b3
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:29:57 2016 +0000
+
+    fix short non-power-of-two FFTs, part of projectNe10/Ne10#135
+
+commit 088a006272aaf06cc499e80a44d557ad0a1d13af
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:26:21 2016 +0000
+
+    reduce ne10_factor calls in C2C FFT allocation
+
+commit b7b332322b35dce278f82a32443f4d97f496f772
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 11:16:13 2016 +0000
+
+    add basis for higher radix FFTs, use this to simplify existing FFT code
+
+commit 62cb3b4dcb549b83ed39088faed2e6454d480e16
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Oct 7 14:16:57 2016 +0100
+
+    update NEON generic FFT docs in line with projectNe10/Ne10#135
+
+commit fd6586c0689b2c329d0ad80c34ab85b8fddb2ed9
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Oct 5 16:02:25 2016 +0100
+
+    improve FFT documentation
+
+commit 422a223f4d94333f0c7862ff7f40d5141404fec2
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Sep 30 15:31:51 2016 +0100
+
+    clean up various pieces of doxygen documentation
+
+commit 88106f61b8123b2508b5dd458a5f8ac96cb38534
+Merge: 94677e6 ae3dcd4
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 10:52:38 2016 +0000
+
+    improve float32 FFT readability and clean up parts of surrounding docs
+
+commit 94677e6c0b761c64cabd7ac697ba9c6b350a9902
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Wed Oct 12 10:20:18 2016 +0100
+
+    fix a bunch of compiler warnings, disable strict aliasing opts
+    
+    Includes a fix for the pointer casting issue projectNe10/Ne10#123.
+
+commit d89094e3ae12def7c155b815756ddc2d7c4ddbec
+Author: Haruki Hasegawa <h6a.h4i.0@gmail.com>
+Date:   Fri Nov 4 19:17:11 2016 +0900
+
+    Remove non position-independent pseudo instructions (ldr rx,=label) (#84)
+    
+    * Remove non position-independent pseudo instructions (ldr rx,=label)
+    
+    Approach 1: (for NE10_fft_float32.neon.s, NE10_fft_float32.neonv8.S, NE10_fft_int16.neon.s)
+    - Use "adr" pseudo instruction
+    
+    Approach 2: (for NE10_fir.neon.s, NE10_iir.neon.s)
+    - Use GOT based access
+    
+    * Fix FIR filter assembly code regression when __PIC__ is undefined
+    
+    * Add ".align 4" to make labels and constants are aligned to word boundary
+
+commit abc53aa24022f12a99b4dd8697ce78d9c5a2d46b
+Merge: ee5d856 a0ed3df
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Fri Nov 4 10:08:13 2016 +0000
+
+    Merge pull request #91 from h6ah4i/feature/check_fft_conformance_test_more_strictly
+    
+    Modify FFT conformance test to check more strictly
+
+commit ae3dcd4c62a2917515819c884c38d66fa57fd0c8
+Author: Joe Savage <joe@reinterpretcast.com>
+Date:   Mon Oct 3 13:17:33 2016 +0100
+
+    improve float32 FFT readability and clean up parts of surrounding docs
+
+commit ee5d856cd9cb8c4a15ace567df4239f4e788d043
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Oct 15 15:30:16 2015 +0800
+
+    Revert "Revert "Fix test_suite_fft_int32.c fails under armv7""
+    
+    This reverts commit 48fc1ee4c52861f4320aace7d3b3345ea39cc838.
+    
+    Change-Id: I4521e70ea086464632c547c977ae69d9d37e451d
+
+commit 38d788a8bc00bbd0d7ab6342e356b3cb788f6636
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Oct 15 15:29:51 2015 +0800
+
+    Revert "Fix test_suite_fft_int32.c fails under armv7"
+    
+    This reverts commit cf33c0d51a445bbe6ad7e21c2af875acee07b838.
+    
+    Change-Id: Id79bf0dfa177fceb52d8cb7cc1d07f1a1b4e1520
+
+commit a08b29d88e3c94d32b5b8f827e7fcf0bc2b34ac2
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Tue Jul 21 09:14:28 2015 +0800
+
+    Enable NEON optimized image rotate for ARM v7-A
+    
+      NEON opimized image rotate was disabled by accident. This patch
+      enables it again. Fix issue #115.
+    
+    Change-Id: I4aa977de8534557d98a707cc9504aac94805d571
+
+commit 1d409d2dccc249cd630dae835f6ece04299da9c8
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Wed Jul 1 13:27:15 2015 +0100
+
+    Improve data layout in RFFT float32
+    
+      Transpose part of twiddles in RFFT float32 to avoid memory access by
+      a large stride.
+    
+    Change-Id: I5e05c5baed523183ed3948371e6b1fbffc916e9b
+
+commit 26b199dde86e44fe544fdab60e0ca1e7b1686a9a
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Fri Jul 10 12:43:27 2015 +0100
+
+    Enable neon code on ARM32 for physics and dsp
+    
+    Change-Id: Id7159b952cdd317c25ad97cc7388244407b75da9
+
+commit 20c6c39b715229c2d70d4c227e33d189cf1d65d9
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Thu Jul 9 16:20:37 2015 +0100
+
+    main fuction in tests return 0 if all tests pass
+    
+    Change-Id: I2bb30f4107174f043809828981484d61e903c30d
+
+commit cf33c0d51a445bbe6ad7e21c2af875acee07b838
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Tue Jun 23 17:56:23 2015 +0100
+
+    Fix test_suite_fft_int32.c fails under armv7
+    
+    For 4-point and 8-point FFTs, we fall back to VFP because
+    they are too short for NEON optimizations.
+    
+    Change-Id: I72cc37e73d9a62459a0ee9d85b36144aad43606f
+
+commit 6ead7273160db6c39ff9fa32b414b4278dcaeab7
+Author: Yang Zhang <yang.zhang@linaro.org>
+Date:   Tue Jun 23 15:47:39 2015 +0800
+
+    Limit the range of input to avoid the failed tests in math module
+    
+    Change-Id: If2001c421a8d879a375e41304b607be75790278b
+
+commit c36608fb4b604809b6345cc2bcb43da4dde70eb9
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Fri Jun 12 10:26:56 2015 +0100
+
+    fix NE10_INLINE_ASM_OPT for RFFT
+    
+    Change-Id: I43a2480a42a6166bff6a72afab022b232d085fea
+
+commit 9f904871e828f2aa621d7f83fce9593d095eaa37
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Tue May 26 18:45:17 2015 +0100
+
+    Bugfix for #111 and #112
+    
+        - Link stdc++ for static build
+        - Switch to intrinsic on iOS
+    
+    Change-Id: I42e741058241f2ea133d98ba67c7a747d3712bec
+
+commit 5b63074db45000f9688460990ee3f5e147d93782
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Tue May 12 16:22:32 2015 +0800
+
+    Bug fix: prevent overflow by moving scaling in front of butterfly
+    
+    Change-Id: I02353d982f0af0920751ced276232f9552b5a675
+
+commit f3638ca1efa6972517890d4f474a4aa521794ac3
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Tue May 12 16:20:04 2015 +0800
+
+    Bug fix: Call appropriate NEON butterfly functions in
+    NE10_fft_int32.neon.c
+    
+    Change-Id: I25040b18cc73bb3171e1be5ee6429f7dd6fc073d
+
+commit d1071c83f4ac8ed82b9fc0c2f284db8c6c0ff284
+Merge: 54a6e88 af11a94
+Author: Phil Wang <phil.wang@arm.com>
+Date:   Tue Apr 7 16:18:39 2015 +0800
+
+    Merge pull request #108 from viswanath-puttagunta/rfcv1_rc3_armv8
+    
+    aarch64: Enable build for aarch64 GNU Linux
+
+commit 54a6e88c8e0cb288a42142c660d966de9a21b5cf
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Fri Apr 3 10:28:58 2015 +0800
+
+    DSP: Fix bug in scaled non-power-of-2 fixed-point FFT
+    
+        Without this patch, the non-power-of-2 fixed-point FFT does scale
+        the output even when the scaled_flag is set to 1.
+    
+    Change-Id: I0e373f1d2ff110b64905902acf7529eafc2cba19
+
+commit af11a9490afe08fdc9d435d96e26d112d7a27ec4
+Author: Viswanath Puttagunta <viswanath.puttagunta@linaro.org>
+Date:   Wed Mar 18 10:29:17 2015 -0500
+
+    aarch64: Enable build for aarch64 GNU Linux
+    
+    Enables build configuration to be able to build Ne10
+    for aarch64 GNU Linux.
+    
+    Eg: build instructions:
+    mkdir build && cd build
+    export NE10_LINUX_TARGET_ARCH=aarch64
+    cmake -DCMAKE_TOOLCHAIN_FILE=../GNUlinux_config.cmake ..
+    make -j6
+    
+    Note: By default, NE10_LINUX_TARGET_ARCH will be set to
+    "armv7"
+    
+    Also adds -funsafe-math-optimizations for ARMv7 GNU targets
+    
+    Signed-off-by: Viswanath Puttagunta <viswanath.puttagunta@linaro.org>
+
+commit 8f2173923982d3c152a0b4d89fbea3ba99b5c919
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Mar 25 17:35:05 2015 +0800
+
+    Provide NE10_UNROLL_LEVEL to control FFT algorithm
+    
+        * Macro NE10_UNROLL_LEVEL should be one of following:
+            0: use less registers, default value on AArch32
+            1: use more registers, default value on AArch64
+    
+        * Fix typos in doc/BuildingNe10.txt and CMakeLists.txt
+        * Update doc/BuildingNe10.txt for environment varialbe
+            NE10_(LINUX/ANDROID/IOS)_TARGET_ARCH
+    
+    Change-Id: I991d11eedf3553d542406a25f89bd1157fe5c5ff
+
+commit d3dd7dba4fe5be091502c7e049937fc4c6bba2d5
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Mar 19 16:26:57 2015 +0800
+
+    DSP: Fine tune fixed-point non-power-of-2 CFFT for GCC 4.9.0
+    
+        Now Ne10 provides inline assembly for fixed-point non-power-of-2
+        Complex FFT, on AArch64. For GCC 4.9.0, user can define
+        NE10_INLINE_ASM_OPT to enable this optimization.
+        Below is performance data with or without this
+        optimization.
+    
+        Cortex-A53 AArch64 mode (1.69GHz)
+        GCC 4.9.0, with -O2
+        Android-21, AArch64
+    
+        | C2C FFT Time Cost|
+        |             in ms|
+        |size|         Ne10|
+        |    |Without| With|
+        |  60|   4.67| 2.91|
+        | 120|   5.79| 3.37|
+        | 240|   5.57| 3.30|
+        | 480|   6.76| 3.87|
+        | 970|   6.89| 4.00|
+    
+    Change-Id: I4f74217b026d8ef6ab6af4e1fb178ce4f1398b50
+
+commit 88039660179ef9add75f674efacd934056a9dabf
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Mar 19 14:37:53 2015 +0800
+
+    DSP: Fine tune floating-point non-power-of-2 CFFT for GCC 4.9.0
+    
+        Now Ne10 provides inline assembly for floating-point non-power-of-2
+        Complex FFT, on AArch64. For GCC 4.9.0, user can define
+        NE10_INLINE_ASM_OPT to enable this optimization.
+        Below is performance data with or without this optimization.
+    
+        Cortex-A53 AArch64 mode (1.69GHz)
+        GCC 4.9.0, with -O2
+        Android-21, AArch64
+    
+        |            C2C FFT Time Cost in ms|
+        |size|         Ne10|pffft|pffft/Ne10|
+        |    |Without| With|     |      With|
+        |  60|   4.74| 3.56|   NA|        NA|
+        | 120|   6.09| 3.57|   NA|        NA|
+        | 240|   6.00| 3.52|   NA|        NA|
+        | 480|   7.02| 3.96| 4.48|      113%|
+        | 960|   7.05| 4.03| 4.50|      112%|
+    
+    Change-Id: Ib241141c4ef962b665ef47f70abfcf4515fe80ba
+
+commit 97dd73d886ad75a11f5121bf72ccc3dcd28d1e2a
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Fri Mar 13 18:10:26 2015 +0800
+
+    Tuning floating point RFFT for GCC 4.9.0
+    
+        Cortex-A53 (1.69GHz)
+        GCC 4.9.0, with -O2
+        Android-L, AArch64
+    
+        |   R2C FFT Time Cost in ms|
+        |size|Ne10|pffft|pffft/Ne10|
+        |  32| 118|  254|      215%|
+        |  64| 126|  198|      157%|
+        | 128| 109|  177|      162%|
+        | 256| 126|  154|      122%|
+        | 512| 122|  165|      135%|
+        |1024| 143|  162|      113%|
+        |2048| 153|  188|      123%|
+    
+        The larger the last column is, the faster Ne10 is.
+    
+    Change-Id: I8921fc83afb8c7307ffd0fcb2a4bb1a88b349339
+
+commit b79e33bb5bba2d02a7b0cfdc1b163a71db7239ec
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Feb 26 14:30:12 2015 +0800
+
+    Update doc/BuildingNe10.txt for Linux
+    
+    Now, users need to set NE10_LINUX_TARGET_ARCH for native compiling Ne10
+    on Linux.
+    
+    Change-Id: I56ce3187f39b07ea5408051d606be7d8dd62f9af
+
+commit c998c861eb63a68bf58023cdbe0540caa26ad038
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Feb 25 17:38:31 2015 +0800
+
+    Remove dependency on libstdc++
+    
+    Set linker language to C.
+    libstdc++ is no longer needed when a 3rd party library is linked to Ne10.
+    
+    Change-Id: Iaa7cfcd069044c896360a35f04e9d2abb5b6b6eb
+
+commit af6f5a413306f1e71934c022fcc5f042421bb23d
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Feb 25 16:01:34 2015 +0800
+
+    Fix function declaration in NE10_init.h
+    
+    Specify type(s) of function ne10_init and function ne10_HasNEON in
+    declarations so that they are prototypes as well.
+    
+    Change-Id: Ie445d5bd7b04f8bf56718dd87435b16b7f554aac
+
+commit 1c58191588947bd7b31f7de144648f1cfa95e001
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Dec 18 19:16:22 2014 +0800
+
+    Fix error in building for iOS #99
+    
+    Change-Id: Iec2b8dda82c2a8c3b189988ddef15bcc3df36070
+
+commit fcc6ffb5c5f48304a2e2330c2969e5e88b92bec0
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Tue Feb 17 14:57:23 2015 +0800
+
+    Enable building for ARMv7 under GNU Linux. Fix issue #97.
+    
+    Change-Id: Ib8f2bc4b1d5d3b7c6b06648a4699f76e9d243332
+
+commit 79c3d787302f8d74b9bcfe6545d487cdf1b101d9
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Mon Feb 2 12:25:02 2015 +0800
+
+    Add flags is_forward/backward_scaled
+    
+    Only complex non-power-of-2 floating point FFT is affected by these
+    flag. Ne10 used to scale output of backward FFT, but not scale output of
+    forward FFT. Now Ne10 will scale output of forward FFT if is_forward_scaled
+    is set to anything but zero. It it possible to disable scaling output of
+    backward FFT by setting is_backward_scaled to zero.
+    
+    Change-Id: I947b1896af46dff16ff725136868028f54d5dad8
+
+commit 24cecb105d238e5629cecff60968b31d74e54c2a
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Mon Feb 2 12:46:32 2015 +0800
+
+    Add destroy functions for FFT.
+    
+    Using following functions instead of NE10_FREE to make sure memory
+    allocated by Ne10 is also freed by Ne10:
+    - Float/Fixed point Complex FFT Destroy functions:
+        - ne10_fft_destroy_c2c_float32
+        - ne10_fft_destroy_c2c_int32
+        - ne10_fft_destroy_c2c_int16
+    - Float/Fixed point Real2Complex FFT Destroy functions:
+        - ne10_fft_destroy_r2c_float32
+        - ne10_fft_destroy_r2c_int32
+        - ne10_fft_destroy_r2c_int16
+    
+    Change-Id: Ia2eacb5faa8501cf3a8d7705ef732db400fc7013
+
+commit cbedcd9407318a002a150fab06a26e72e2aac61e
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Sun Feb 1 17:45:58 2015 +0800
+
+    Update API for fixed-point non-power-of-2 FFT
+    
+    original:
+        ne10_fft_cfg_int32_t ne10_fft_alloc_c2c_int32 (ne10_int32_t nfft);
+    now:
+        ne10_fft_cfg_int32_t (*ne10_fft_alloc_c2c_int32) (ne10_int32_t nfft);
+        ne10_fft_cfg_int32_t ne10_fft_alloc_c2c_int32_c (ne10_int32_t nfft);
+        ne10_fft_cfg_int32_t ne10_fft_alloc_c2c_int32_neon (ne10_int32_t nfft);
+    
+    Use _c version for ne10_fft_c2c_1d_int32_c, and use _neon version for
+    ne10_fft_c2c_1d_int32_neon.
+    ne10_fft_alloc_c2c_int32 becomes a functon pointer now. Function
+    ne10_init_dsp will set it pointing to the right function according to
+    runtime condition.
+    Test suite is updated accordingly.
+    
+    Change-Id: I15cbfe75a29995696335c9f6939e03cd2d5fe57a
+
+commit 054cf30f7c7ae17d549872fcef62578600c3dd83
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Fri Jan 23 15:19:44 2015 +0800
+
+    Enable Fixed-Point Non-power-of-2 FFT.
+    
+    For Cortex-A53 (AArch64)
+    LLVM 3.5, -O2
+    Time: in ms
+    SNR : in dB
+    
+    |         |Forward  |Backward |
+    |    |Size| Time|SNR| Time|SNR|
+    |   C|   8|   26| 92|   26| 93|
+    |   C|  16|   51| 90|   51| 90|
+    |   C|  32|  130| 89|  132| 91|
+    |   C|  60|  452| 81|  469| 83|
+    |   C|  64|  304| 88|  305| 88|
+    |   C| 120| 1070| 82| 1149| 82|
+    |   C| 128|  727| 88|  735| 89|
+    |   C| 240| 2197| 81| 2312| 82|
+    |   C| 256| 1659| 88| 1659| 88|
+    |   C| 480| 5127| 82| 5520| 82|
+    |   C| 512| 3819| 88| 3855| 88|
+    |   C| 900|11621| 80|12190| 81|
+    |   C| 960|10640| 82|11246| 82|
+    |NEON|   8|   10| 93|   10| 95|
+    |NEON|  16|   18| 97|   18| 97|
+    |NEON|  32|   54| 88|   55| 89|
+    |NEON|  60|  163| 88|  169| 88|
+    |NEON|  64|  133| 85|  133| 86|
+    |NEON| 120|  346| 88|  358| 90|
+    |NEON| 128|  263| 87|  264| 87|
+    |NEON| 240|  668| 89|  704| 88|
+    |NEON| 256|  635| 85|  635| 85|
+    |NEON| 480| 1526| 89| 1595| 89|
+    |NEON| 512| 1300| 86| 1299| 87|
+    |NEON| 900| 3207| 88| 3372| 89|
+    |NEON| 960| 3107| 89| 3394| 89|
+    
+    Change-Id: I256d1e4eff40ff20e19fe941f3222a3f7d2944f6
+
+commit 396db79e1f7e74b3b69a77513f951a55540c61a1
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Jan 21 14:20:48 2015 +0800
+
+    DSP: Generic Fixed-Point complex FFT is enabled.
+    
+    Currently, only C verion is available.
+    Pass conformance test. Since there is no NEON optimized Fixed-Point FFT,
+    performance test is runned but not compared.
+    
+    For A53, with GCC
+    Complex Fixed-Point FFT
+    Time in ms, SNR in dB
+    
+    |Direction|    |nfft|time|SNR|
+    |  forward|   C|  16|  66| 82|
+    |  forward|   C|  32| 108| 82|
+    |  forward|   C|  60| 366| 80|
+    |  forward|   C|  64| 360| 82|
+    |  forward|   C| 120| 876| 80|
+    |  forward|   C| 128| 641| 82|
+    |  forward|   C| 240|1715| 80|
+    |  forward|   C| 256|1876| 82|
+    |  forward|   C| 480|4075| 79|
+    |  forward|   C| 512|3484| 82|
+    |  forward|   C| 900|9266| 79|
+    |  forward|   C| 960|8224| 79|
+    | backward|   C|  16|  65| 82|
+    | backward|   C|  32| 106| 82|
+    | backward|   C|  60| 361| 80|
+    | backward|   C|  64| 360| 82|
+    | backward|   C| 120| 874| 80|
+    | backward|   C| 128| 639| 83|
+    | backward|   C| 240|1731| 79|
+    | backward|   C| 256|1892| 82|
+    | backward|   C| 480|4113| 79|
+    | backward|   C| 512|3509| 82|
+    | backward|   C| 900|9285| 79|
+    | backward|   C| 960|8384| 79|
+    
+    Change-Id: Icb4575a22c51e2f684a1ebbe0464a782e912f769
+
+commit 8838bef34cf834e296c492e82e67a3dd429f590a
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Jan 21 18:35:04 2015 +0800
+
+    Disable full path in doxygen.cfg
+    
+    Change-Id: I7c4f19c8055f6b16d2680cc8d8bbdc149b330860
+
+commit bf56addedfaa3ec2100e2b93b37809259c2abde1
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Tue Jan 20 18:41:25 2015 +0800
+
+    Extend copyright year to 2015.
+    
+    Change-Id: I77b17e0c07713d03e2c74300b9427e0c15d0f963
+
+commit f10197f4ecc468c18e193d73f54379e56e8c994e
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Tue Jan 13 19:50:58 2015 +0800
+
+    Disable following functions which have not been optimized for aarch64.
+    
+    Following functions have been disabled for aarch64 target:
+      -. 6 dsp functions:
+         ne10_fir_float_neon
+         ne10_fir_decimate_float_neon
+         ne10_fir_interpolate_float_neon
+         ne10_fir_lattice_float_neon
+         ne10_fir_sparse_float_neon
+         ne10_iir_lattice_float_neon
+      -. 1 imgproc function:
+         ne10_img_rotate_rgba_neon
+      -. 3 physics functions:
+         ne10_physics_compute_aabb_vec2f_neon
+         ne10_physics_relative_v_vec2f_neon
+         ne10_physics_apply_impulse_vec2f_neon
+      -. all functions in math module
+    
+    Smoke test has been passed under both aarch64 and armv7.
+    
+    Change-Id: Ied135a4ac83260564081180f4bfef6eda5042aa0
+
+commit 7fad4fcd2aa43a875b4f61e6d68d4cf6dece83ec
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Tue Jan 13 17:16:35 2015 +0800
+
+    Enable aarch64 in cmake build script for android platform.
+    
+    Change-Id: Iae0fa7b89f8ed8ee6cc932055c0602e3191e85b6
+
+commit a9e52993e9a96ac810fd7ae7e559e191df22f993
+Author: Haruki Hasegawa <h6a.h4i.0@gmail.com>
+Date:   Sun Nov 9 16:57:45 2014 +0900
+
+    Fix wrong definition of DIV_TW81 and DIV_TW81N values
+
+commit 43967a9b22fc82757ae1d2867fe7cbaa12159c67
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Dec 24 16:55:57 2014 +0800
+
+    DSP: remove unit tests in RFFT
+    
+    Change-Id: If535d81f1dbef710d6f7ac807e0313408345ac4a
+
+commit 08800b9975b44f364d70ba4a7f833820d00135ef
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Dec 24 16:17:30 2014 +0800
+
+    Change include Syntax
+    
+    Change-Id: I2872d8bba91beaad26d2b2b3aa56e63b10186083
+
+commit 0209722c7cfce824ab91eef92fcf715de8831bd7
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Dec 24 17:21:47 2014 +0800
+
+    FFT: Fix false assert at the last loop
+    
+    Change-Id: I9954b32f4dafd4eed63db98a24cd47cabe9c1b3d
+
+commit 36a4d11e9587f11055ad28e369651b0ef0fcba8a
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Tue Dec 23 17:20:57 2014 +0800
+
+    DSP/FFT: declare ne10_radix8_r2c(c2r)_c
+    
+    Change-Id: Ia01574388bed413954d66a6927c8d3d969f3d329
+
+commit a0ed3df8e10c9a664b492d68e596cb45e5ed3498
+Author: Haruki Hasegawa <h6a.h4i.0@gmail.com>
+Date:   Sun Nov 9 16:57:36 2014 +0900
+
+    Modify FFT conformance test to check more strictly (threshold: 50 dB -> 90 dB)
+
+commit ef920369c85097cf97f1f3ba0d3bb4eed7b8ab6b
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Thu Dec 18 16:19:55 2014 +0800
+
+    Update the copyright and license.
+    
+    Change-Id: I224478247aa7201fb8bf150dfd14e7b92b2e5141
+
+commit 20b1896fd6532336e6a46608778bd6e0396dc4dc
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Dec 17 11:52:11 2014 +0800
+
+    NE10/FFT/complex-non-power-of-2 NEON
+    
+        ARM 64-bit (Cortex-A57)
+        complex forward float LLVM 3.5
+                 Time in ms      |
+            |kiss|opus|pffft|NE10|
+            |   C|   C| NEON|NEON|
+          60| 129| 113|   NA|  44|
+         120| 148| 127|   NA|  49|
+         240| 151| 128|   55|  47|
+         480| 169| 142|   60|  55|
+         960| 183| 149|   65|  58|
+        1920| 193| 167|   71|  66|
+        3840| 217| 175|   76|  71|
+        SNR > 100dB
+    
+        ARM 64-bit (Cortex-A53)
+        complex forward float LLVM 3.5
+                 Time in ms      |
+            |kiss|opus|pffft|NE10|
+            |   C|   C| NEON|NEON|
+          60| 295| 311|   NA|  72|
+         120| 368| 375|   NA|  79|
+         240| 345| 342|  104|  77|
+         480| 415| 407|  115|  87|
+         960| 406| 378|  121|  95|
+        1920| 476| 441|  138| 113|
+        3840| 497| 424|  161| 126|
+        SNR > 100dB
+    
+        ARM 32-bit (Cortex-A9)
+        complex forward float LLVM 3.5
+                 Time in ms      |
+            |kiss|opus|pffft|NE10|
+            |   C|   C| NEON|NEON|
+          60| 224| 211|   NA|  98|
+         120| 265| 245|   NA| 104|
+         240| 262| 240|  130| 106|
+         480| 302| 274|  150| 122|
+         960| 305| 271|  162| 153|
+        1920| 369| 356|  230| 206|
+        3840| 415| 440|  282| 239|
+        SNR > 100dB
+    
+    Change-Id: If9418041b01eed49dbdc8d6a18dd03f2c5684da8
+
+commit 46b1da15cd3b7851dca5868b288d0fce323c3a58
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Wed Dec 17 11:42:40 2014 +0800
+
+    NE10/FFT/backward-complex-non-power-of-2 C
+    
+    ARM 32-bit (Cortex-A9)
+    complex backward unscaled float GCC 4.9
+            Time in ms      |
+       |kiss|opus|pffft|NE10|
+       |   C|   C| NEON|   C|
+     60| 195| 172|   NA| 144|
+    120| 234| 200|   NA| 173|
+    240| 231| 203|  148| 175|
+    480| 267| 231|  176| 215|
+    
+    ARM 64-bit (Cortex-A57)
+    complex backward unscaled float GCC 4.9
+            Time in ms      |
+       |kiss|opus|pffft|NE10|
+       |   C|   C| NEON|   C|
+     60| 125|  89|   NA|  87|
+    120| 141| 104|   NA| 103|
+    240| 146| 106|   52| 109|
+    480| 163| 120|   58| 127|
+    
+    SNR > 100dB for all 2^M*3^N*5^K
+    
+    Change-Id: Ie4bb27d053213bfbf2dbdd0020f9fda5db4312f9
+
+commit 5853c2dadeab2e8a37a547dd6e1a40e183d6ff0e
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Mon Nov 17 16:57:44 2014 +0800
+
+    NE10/FFT/forward-complex-non-power-of-2 C
+    
+    ARM 32-bit (Cortex-A9)
+    complex forward float GCC 4.9
+           Time in ms       |
+       |kiss|opus|pffft|NE10|
+       |   C|   C| NEON|   C|
+     60| 213| 200|   NA| 131|
+    120| 252| 225|   NA| 164|
+    240| 245| 245|  163| 171|
+    480| 268| 262|  187| 195|
+    
+    SNR > 100dB, for all following cases
+        |size|time|
+    NE10|  16|  69|
+    NE10|  32|  80|
+    NE10|  60| 131|
+    NE10|  64| 106|
+    NE10| 120| 164|
+    NE10| 128| 110|
+    NE10| 240| 171|
+    NE10| 256| 148|
+    NE10| 480| 195|
+    NE10| 512| 144|
+    NE10|1024| 214|
+    
+    ARM 64-bit (Cortex-A57)
+    complex forward float LLVM 3.5
+           Time in ms       |
+       |kiss|opus|pffft|NE10|
+       |   C|   C| NEON|   C|
+     60| 131| 111|   NA|  95|
+    120| 154| 121|   NA| 121|
+    240| 153| 129|   55| 121|
+    480| 168| 144|   61| 146|
+    
+    SNR > 100dB, for all following cases
+        |size|time|
+    NE10|  16|  28|
+    NE10|  32|  31|
+    NE10|  60|  95|
+    NE10|  64|  43|
+    NE10| 120| 121|
+    NE10| 128|  46|
+    NE10| 240| 121|
+    NE10| 256|  56|
+    NE10| 480| 146|
+    NE10| 512|  61|
+    NE10|1024|  73|
+    
+    Change-Id: I9fab61e9e47279d848815699e928ab4abead5635
+
+commit f3bbc05cc521350576c5cf0c7744e06905e316aa
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Thu Nov 13 14:33:09 2014 +0800
+
+    NE10/DSP/FFT formating
+    
+    Change-Id: Ie96cc6945844d0eb23b04027cce7fb03c7163f1d
+
+commit bb6be0849012bcec8644d6d898ef9640b477135f
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Sun Nov 9 09:03:15 2014 -0800
+
+    Contributing
+    
+    Also see: https://github.com/projectNe10/Ne10/wiki/Contribution-of-code-F.A.Q.
+
+commit a7a08827b789d1a0c7499d0224af3595075edb4c
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Sun Nov 9 08:49:15 2014 -0800
+
+    3 clause BSD only
+
+commit 55eb787d1af9e9c9d8bf44e34d325d7d01505fe3
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Sun Nov 9 08:43:01 2014 -0800
+
+    Created project contribution instructions
+    
+    Anyone wishing to submit a pull request must sign a contribution license agreement (CLA) with ARM first.
+
+commit ed9e9fbfcd4fa7809265b1c272be1d9145da1718
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Sun Nov 9 08:40:01 2014 -0800
+
+    Update email contacts to match landing page
+
+commit 4eebe29e3bcc6d485ff193818f137e4a8c40e789
+Author: Kévin PETIT <kevin.petit@arm.com>
+Date:   Mon Sep 29 13:34:36 2014 +0100
+
+    Add line wrapping to the documentation files
+    
+    Change-Id: I81ca1c1980d250b2df020c7b584f91cc0595fdc2
+    Signed-off-by: Kévin PETIT <kevin.petit@arm.com>
+
+commit 8c1d30a17af5b9eee0b03c06b3b6ed8f99e4a878
+Author: Phil.Wang <phil.wang@arm.com>
+Date:   Mon Sep 22 12:26:46 2014 +0800
+
+    NE10/DSP/RFFT: optimise RFFT for armv8
+    
+    intrinsic, LLVM 3.5, -O2
+    on a57, juno, android
+       size|   time in ms   |   boost   |
+           |  NE10 |  pffft | pffft/NE10|
+           |R2C|C2R|R2C|C2R*|  R2C|  C2R|
+         32|145|185|279| 319|1.92x|1.72x|
+         64|175|200|239| 279|1.36x|1.39x|
+        128|166|185|237| 262|1.42x|1.41x|
+        256|197|208|232| 256|1.17x|1.23x|
+        512|208|216|254| 270|1.22x|1.25x|
+       1024|241|244|260| 278|1.07x|1.14x|
+       2048|258|263|332| 322|1.28x|1.22x|
+       4096|303|304|388| 353|1.28x|1.16x|
+       8192|339|334|424| 426|1.25x|1.27x|
+    
+    intrinsic, GCC 4.9, -O2
+    on a57, juno, android
+       size|    time in ms  |   boost   |
+           |  NE10 |  pffft | pffft/NE10|
+           |R2C|C2R|R2C|C2R*|  R2C|  C2R|
+         32|174|181|328| 410|1.88x|2.26x|
+         64|214|216|270| 338|1.26x|1.56x|
+        128|210|197|259| 310|1.23x|1.57x|
+        256|232|223|243| 283|1.04x|1.26x|
+        512|250|222|263| 307|1.04x|1.38x|
+       1024|274|251|272| 304|1.00x|1.20x|
+       2048|288|277|314| 353|1.08x|1.27x|
+       4096|333|303|349| 379|1.04x|1.25x|
+       8192|370|342|424| 452|1.14x|1.31x|
+    
+    * Ne10 supports scale of output for backward RFFT,
+      while pffft doesn't. To normalize the benchmark,
+      a scale operation was added to the end of each
+      call to pffft.
+    * pffft C2R FFT costs 410ms when size==32, 338ms when
+      size==64, this is because the former loops more times
+      than the latter does, so it does not mean pffft cost
+      more time for short input.
+    
+    intrinsic, GCC 4.9, -O2
+    on a53, juno, android
+       size|    time in ms  |   boost   |
+           |  NE10 |  pffft | pffft/NE10|
+           |    R2C|     R2C|        R2C|
+         32|    347|     607|      1.74x|
+         64|    389|     489|      1.25x|
+        128|    334|     484|      1.44x|
+        256|    401|     456|      1.13x|
+        512|    380|     502|      1.32x|
+       1024|    460|     512|      1.11x|
+       2048|    481|     593|      1.23x|
+       4096|    605|     709|      1.17x|
+       8192|    704|     891|      1.26x|
+    
+    Change-Id: Ide0b974620ae8d06cfa862769004b2110abaaeff
+
+commit 8435136558588fce9557047c11bd0bd0933d4720
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Tue Jul 22 17:34:15 2014 +0800
+
+    add v8 assembly for float fft.
+    
+    This assembly file is suitable for gcc only. If you want to use llvm, please use the files with suffix .neonintrinsic.c
+    
+    Change-Id: I27528b2ebbf079db0e4f1c6ecf7828baa0fbaf0a
+
+commit a2c5817f5bd7683dcd3c8bd44bbb3503be117e32
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Thu Jul 3 11:29:03 2014 +0800
+
+    fix the issues
+    
+     - update NE10_FREE macro define
+       when a pointer is freed, the NULL should be assigned.
+     - remove needless backslash
+     - modify the data type of address for ARM v8
+     - modify IFFT scaling for int32/int16
+    
+    Change-Id: I62dc5803ba106e13fb9c91dba6ac3099f3fb5737
+
+commit e6e7a4ecea8adb41fa54ea1e368fe75b7c118d39
+Merge: 9705187 75740a7
+Author: Zhou (Joe) Yu <joe.yu@arm.com>
+Date:   Wed Jul 2 11:22:40 2014 +0100
+
+    Merge "make sure the address of buffer 64-bit alignment"
+
+commit 75740a74b6f5c05f62201ebe0c1836143d14e0ac
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Wed Jul 2 14:41:57 2014 +0800
+
+    make sure the address of buffer 64-bit alignment
+    
+    For FFT NEON implementation, the 64-bit alignment address of input/output/twiddle can improve the
+    speed of data load/store. If the address isn't 64-bit alignment, there will be BUS error.
+    
+    Change-Id: I201307de980eef544025bcb498b0093a272e2936
+
+commit 9a93074113b93b497aa7dda73f2ea81f10eb45fd
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Tue Jul 1 12:39:23 2014 +0800
+
+    fix bug in fir
+    
+    When input length isn't multiple of 4, the filter output result is wrong. This patch is to fix this issue.
+    
+    Change-Id: I212d86fef3beb9aaeb3292d98719665ba521daee
+
+commit 9705187d0f3277cde73a031894bc2c594555f3c9
+Merge: dfa2c19 3ca3add
+Author: Zhou (Joe) Yu <joe.yu@arm.com>
+Date:   Tue Jul 1 07:04:39 2014 +0100
+
+    Merge "fix bug in fir"
+
+commit 3ca3add3a17586e78309b2b381822372270f42da
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Tue Jul 1 12:39:23 2014 +0800
+
+    fix bug in fir
+    
+    When input length isn't multiple of 4, the filter output result is wrong. This patch is to fix this issue.
+    
+    Change-Id: I212d86fef3beb9aaeb3292d98719665ba521daee
+
+commit dfa2c192d374a87cb0e9744cbabdce82a6fc0a5e
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Mon Jun 30 15:45:47 2014 +0800
+
+    add temp buffer allocation and scaling by 2 for rfft
+     - add temp buffer allocation in init function
+     - add scaling by 2 for C, NEON assembly and intrinsic version
+    
+    Change-Id: I7e46f327f43664e06700089f4d38f0d868d44f3e
+
+commit e7a53a7e47fb49accae313435b29e5648d2d8ac3
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Thu Jun 19 17:21:01 2014 +0800
+
+     update the FFT implementation
+    
+     - add scaling by nfft in IFFT
+     - add temp buffer to protect the source data
+     - change the interface for passing temp buffer
+     - add intrinsic version of FFT
+     - indent the code
+    
+    Change-Id: I35f46e60bb88070127eb59281ddbd3a72f6b8e7d
+
+commit 277e62da35dd42e7f1d32c3a22a8d0bf973b6e41
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Tue Jun 17 22:03:46 2014 -0700
+
+    ignore *.so and *.prefs
+
+commit f631df229bb09067df9c460734c328eb95c04a85
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Tue Jun 17 21:58:26 2014 -0700
+
+    Minor semantic update to demo
+
+commit c0c93197f9603b6fb2d603a7f14a308f60b478a7
+Author: Matthew DuPuy <github@internetonastick.net>
+Date:   Tue Jun 17 20:31:30 2014 -0700
+
+    cfft and rfft test modules removed
+    
+    NE10_TEST_DSP could no longer build with cfft and rfft test modules
+    removed.
+
+commit 0af8012e61d43bee2d640a0b116f83e8dacb04bc
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Fri Jun 13 14:59:51 2014 +0800
+
+        optimize int32/int16 complex FFT
+    
+        The performance result is as follows:
+    
+        toolchain: gcc 4.8 at -O2
+        omx fft's execute time is the base. The ratio is less, the performance is better.
+    
+        int32 FFT
+        A9:
+        |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+        |Ne10 |73.24%|99.95%|95.78%|96.04%|97.97%|97.57%|99.51%|97.87%|98.12%|
+        |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+        A15:
+        |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+        |Ne10 |84.89%|98.62%|89.33%|100.7%|99.28%|103.9%|101.7%|105.1%|96.67%|
+        |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+        int16 FFT
+        A9:
+        |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+        |Ne10 |109.2%|97.81%|100.3%|97.20%|101.3%|99.01%|103.4%|103.5%|94.67%|
+        |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+        A15:
+        |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+        |Ne10 |112.6%|95.78%|104.3%|101.7%|112.3%|111.5%|102.3%|105.1%|99.78%|
+        |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+    Change-Id: I7290ae5f9abfd3d04f8ca501f5ecbff452973d4b
+
+commit c3bbc6148cbbc7cb9c0f5e94456bfaac4c77976b
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Fri May 30 19:36:23 2014 +0800
+
+    optimize float complex FFT
+    
+    1. To optimize FFT, the algorithm is changed. Bit reversal is removed and radix 8 is added.
+    2. After test, the optimized FFT show the best performance, so that the old implementations are removed.
+    
+    The performance result is as follows:
+    
+    toolchain: gcc 4.8 at -O2
+    omx fft's execute time is the base. The ratio is less, the performance is better.
+    
+    panda board A9:
+    |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+    |Ne10 |84.27%|89.57%|85.63%|85.79%|87.89%|87.91%|83.51%|97.08%|92.68%|
+    |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+    nexus10 A15:
+    |     |16    |32    |64    |128   |256   |512   |1024  |2048  |4096  |
+    |Ne10 |84.88%|98.43%|89.46%|101.0%|99.24%|103.2%|93.80%|105.1%|97.44%|
+    |omx  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |100%  |
+    
+    Change-Id: I363ee1602f08532e566d3a5a4f3d7a99972a1283
+
+commit 30a6c3f7c710c394617158dda85925d755999185
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Thu May 15 14:20:15 2014 +0800
+
+    extend copyright year and add the extend script.
+    
+    Change-Id: Ice948d88f2dc6122b562bf479aea53c060181345
+
+commit 11309ed938fe25c46043ec2792b3515cab7413bc
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Mon Dec 2 13:27:20 2013 +0800
+
+    add box filter to image processing module.
+
+commit 0e856ebd7142685befd47b709685266f66acde59
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Tue Apr 22 14:11:17 2014 -0700
+
+    Create Acknowledgements.md
+
+commit f1819d4cd3d76069619e4e190790c18510adacde
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Wed Mar 12 14:31:46 2014 -0700
+
+    Create LICENSE
+    
+    Requested for clarification of license in code file headers.
+
+commit 26bc2ef8241d8363f5a9c11e433e38e1e7ee6212
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Wed Feb 19 17:59:14 2014 +0800
+
+    make changes as follows:
+    -optimize float/int32 fft for 4-4096
+    -add unscaled/scaled implementation for int32 fft
+    -add neon intrinsic version for float/int32 fft
+
+commit 948f8d1e6f50c9ec275356d98a29390784f8116b
+Author: Matthew DuPuy <matthew.dupuy@arm.com>
+Date:   Fri Feb 14 12:49:48 2014 -0800
+
+    Call for use cases
+    
+    Help us track Ne10 usage since downloads are not a great metric and didn't even exist in GitHub till 2014.
+
+commit e28049507c2a09c317541f2023a0be4b33f11a79
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Fri Jan 24 17:48:51 2014 +0800
+
+    make the following changes
+      -add 3 functions for collision detection
+      -add test cases and doc
+      -update the ReleaseNote
+
+commit 416714246387701a8cee34382ae021c09252e299
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Mon Dec 16 14:04:06 2013 +0800
+
+    add following changes:
+        - add MIN_IOS_VER configuration for iOS platform building
+        - add new added FFT functions' iOS support
+        - remove resize function's assembly version, only keep the intrinsics version
+        - refine the smoke test case for resize function
+
+commit b9334737d25f7dd662e34554bdecaa23a166a1e5
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Mon Dec 9 12:11:46 2013 +0800
+
+    add hard float support for Linux/Andriod
+
+commit bb58860f27b8e9d3d189dac350730b9097050199
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Wed Nov 20 16:15:11 2013 +0800
+
+    add the new FFT features
+     - c2c FFT/IFFT(float/int32/int16) with 2^N size
+     - r2c FFT(float/int32/int16) with 2^N size
+     - c2rIFFT(float/int32/int16) with 2^N size
+     - test cases and doc
+
+commit a3c009bb28c9925bbae428bf4510970cb0505f49
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Thu Oct 24 18:55:12 2013 +0800
+
+    Make following changes:
+         - update cmake config script and doc due to Xcode upgrade
+         - add compiler switch(-mthumb) for android and ubuntu to make sure generated code is thumb code.
+         - change the log output buffer size to get around the bug in sfft test.
+
+commit f7fc4bf1a2a1ac141a6a7262f9075ab802422831
+Author: Yang Zhang <yang.zhang@arm.com>
+Date:   Mon Sep 2 18:06:45 2013 +0800
+
+    Make the following changes
+     - Add C implementations, doc and test cases for image resize/rotate
+     - fix the bug in NEON version of image resize
+     - add a header file for external macro definitions
+
+commit e32d7415c35f6364c464e1d23426d882eede875c
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Thu Aug 22 14:21:58 2013 +0800
+
+    update build script to enable building under Mac OS for Android development.
+
+commit d362bc5cf1ea87e05e6b012137e12de6ce1f7359
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Thu Aug 22 14:20:18 2013 +0800
+
+    add benchmark result to Android and iOS demo.
+
+commit a539595839cda75684f73acb931cd1513a30443d
+Author: Fang Bao <Fang.Bao@arm.com>
+Date:   Wed Jun 26 15:39:30 2013 +0800
+
+    Add NEON intrinsic implementation of resize.
+    
+    NOTE:
+    The gcc 4.7 is the minimum version advocated for compiling NEON intrinsics.
+    The intrinsic version will not be compilied because there is a NEON assembly version already.
+    To enable it, you should:
+      * Uncommenting the line including NE10_resize.neon.c in modules/CMakeLists.txt
+      * Commenting the line including NE10_resize.neon.s in modules/CMakeLists.txt
+
+commit 438609b7a626d8165fc0cbbf7ddaed13553e7eb1
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Tue Jun 25 18:21:36 2013 +0800
+
+    - fix a bug when run command line tests
+    - add a reasonable check when add platform demo macro in Cmake script
+
+commit bb8ec2a6b4f953621b2cc1d763b651da51332590
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Mon Jun 17 12:19:49 2013 +0800
+
+    add android demo.
+
+commit acfab91d3b6b92ede790a841bfe78eaf64754b34
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Sat Jun 8 11:04:29 2013 +0800
+
+    add iOS demo.
+
+commit 2b10e428be54b52fde79391addb3acb67ec5efe3
+Author: Zhongwei Yao <zhongwei.yao@arm.com>
+Date:   Mon Jun 3 12:16:25 2013 +0800
+
+    add iOS support.
+
+commit 644edcda530e69f514735f0636b81691f723e3f0
+Merge: 4034874 0a4a0b4
+Author: Zhongwei Yao <ashi08104@gmail.com>
+Date:   Thu May 23 19:32:41 2013 -0700
+
+    Merge pull request #53 from projectNe10/dev/zhongwei/android_support_review
+    
+    update building system to add android support.
+
+commit 0a4a0b442c58ad87d3e06dd52b43f2134adee95c
+Author: Zhongwei Yao <Zhongwei.Yao@arm.com>
+Date:   Sun Apr 7 11:31:48 2013 +0800
+
+    update building system to add android support.
+
+commit 4034874de8757ade9c9ae0c54bd5b9f479fa1819
+Merge: 88c18f0 ebbbcf1
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Fri Apr 26 04:59:28 2013 -0700
+
+    Merge pull request #52 from projectNe10/dev/yangzhang/imageRotate
+    
+    add the NEON functions for image rotate
+
+commit ebbbcf1f91e2baaaab717ca71e3f83abc664b2dc
+Author: yang01 <yang01@yang01.(none)>
+Date:   Mon Apr 1 10:42:37 2013 +0800
+
+    use ne10 style data types to replace commom style
+
+commit f91b00399340f7612304d26f5af7f2dce221f48a
+Author: yang01 <yang01@yang01.(none)>
+Date:   Fri Mar 29 16:51:05 2013 +0800
+
+    add image rotate function(NEON)
+
+commit 88c18f02199947b2c8b57796f5a3ca53160aff96
+Merge: 094744d 64fecd9
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Sun Mar 17 20:20:28 2013 -0700
+
+    Merge pull request #48 from projectNe10/dev/yangzhang/imageResizeZoomIn
+    
+    fix the bug for image zoom in
+
+commit 64fecd91043886d0ce3ac7ef328e1402c74f983c
+Author: yang01 <yang01@yang01.(none)>
+Date:   Mon Mar 18 11:17:51 2013 +0800
+
+    fix the bug for image zoom in
+
+commit 094744d512723718296b7b0ea51eef13bfe1ac6b
+Merge: 33b2817 7987e26
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Mon Feb 25 19:26:28 2013 -0800
+
+    Merge pull request #47 from projectNe10/dev/yangzhang/imageResize
+    
+    add image resize functions(NEON version)
+
+commit 7987e268f4be28ff2f14d4c7afded9b2eba302d1
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Feb 26 11:18:07 2013 +0800
+
+    add image resize functions(NEON version)
+
+commit 33b2817a0817b93e0b16de270e715abf6705faca
+Merge: d151b7c 71bb515
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Tue Jan 8 19:58:24 2013 -0800
+
+    Merge pull request #42 from projectNe10/dev/yangzhang/documents
+    
+    build documentation with doxygen
+
+commit 71bb51568e5c491ba3ca8ce2fff1498f6c76161a
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Jan 8 13:59:21 2013 +0800
+
+    change the URL for New BSD License
+
+commit 2dc966fccf94e7c2a18f3b528fb235459bb0042a
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Dec 18 18:47:14 2012 +0800
+
+    move information of USAGE.txt to documentations of doxygen
+
+commit 106f0629215ee6c69e68b528dbd66ba22d4e4848
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Dec 18 16:33:59 2012 +0800
+
+    add notes and image for doxygen
+
+commit ab7613e8cf8c148e6397be010df7c5cf14d70ca4
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Dec 12 16:35:53 2012 +0800
+
+    build the frame work of documents with doxygen
+
+commit f29f3e36f8fc543da91516e0440e9abc6cf5e39e
+Merge: 0825b8d d151b7c
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Dec 12 10:49:09 2012 +0800
+
+    Merge branch 'master' of git://github.com/projectNe10/Ne10 into documents
+
+commit 0825b8dc95168165eded823214fbc996483dc422
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Dec 12 10:46:39 2012 +0800
+
+    add doxygen files
+
+commit d151b7c31d7ed41b29050ed277b19f19f79ad11e
+Merge: 45b2377 e13555e
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Tue Dec 11 02:26:33 2012 -0800
+
+    Merge pull request #41 from projectNe10/dev/yangzhang/seatest
+    
+    build test environment with seatest
+
+commit e13555eb4105fca0fba24761332b412b0d38bba5
+Merge: 9961e90 45b2377
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Dec 11 18:23:35 2012 +0800
+
+    Merge remote-tracking branch 'origin/master' into seatest
+
+commit 9961e90a21282b2694d28ff97922a209e5350055
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Dec 11 18:18:18 2012 +0800
+
+    remove extra spaces
+
+commit 45b2377cd19d60adaf1f7adc7cdc80a21a95c16c
+Merge: bf0eeb0 c679af2
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Mon Dec 10 19:52:43 2012 -0800
+
+    Merge pull request #40 from projectNe10/dev/yangzhang/documents
+    
+    add functions list to doc
+
+commit 8d50bdbf8678e00709e91ee54d286e83e646b323
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Dec 11 11:20:36 2012 +0800
+
+    add license for seatest files
+
+commit c679af2f932ff63a389642d538d0691d4576d5a3
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Dec 10 11:44:31 2012 +0800
+
+    add functions list to doc
+
+commit 0a8b41945b76f4defee5eecf9a694586013f020e
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Dec 7 13:53:33 2012 +0800
+
+    indent the source code
+
+commit 191b6d78a2fd2139a3cbd96d89df21818d9e6bb0
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Nov 30 17:05:45 2012 +0800
+
+    build test environment with seatest
+
+commit bf0eeb05eb9664ab05ad627f998f91bbf50982a0
+Merge: 1bf55a0 ab30b45
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Thu Nov 22 21:51:59 2012 -0800
+
+    Merge pull request #39 from projectNe10/dev/yangzhang/finetune_dsp
+    
+    Dev/yangzhang/finetune dsp
+
+commit ab30b457a975f56a72d3cc48ce2ddc42d0edebb6
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Nov 23 12:02:46 2012 +0800
+
+    modified the interface of CIFFT for precision
+
+commit 67cf658420380ca75c4fd5bf43ebdd2b77fc3cff
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Nov 22 10:41:45 2012 +0800
+
+    modify push operations for stack aligned
+
+commit 97c162781c83584851ea3758203f9d2aa46772d5
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Nov 20 18:11:07 2012 +0800
+
+    fine tune dsp functions
+    1. fine tune FIR function
+    2. keep stack 8 bytes aligned
+    3. save D8-15 register
+
+commit 1bf55a0c308048cba010a231735b25422fb55cb8
+Merge: 48309ca 1025a19
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Mon Oct 29 01:55:25 2012 -0700
+
+    Merge pull request #38 from projectNe10/dev/yangzhang/filter
+    
+    add FIR/IIR functions
+    1. FIR
+    2. FIR decimate
+    3. FIR interpolate
+    4. FIR lattice
+    5 FIR sparse
+    6. IIR lattice
+
+commit 1025a19dd6a3016c6bfc4a780fbf8743f49efab8
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Oct 29 16:44:23 2012 +0800
+
+    add notes " these functions aren't for hard vfpv3 ABI yet"
+
+commit 5e3dc6ba2e08b01e746e5c67b1966fbcc786ab64
+Merge: 3b2f1a8 48309ca
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Oct 29 16:38:05 2012 +0800
+
+    Merge branch 'master' of git://github.com/projectNe10/Ne10
+
+commit 48309ca4cdd905f378e5d26cb9afe937c1437242
+Merge: 7854b32 96c8913
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Mon Oct 29 00:46:51 2012 -0700
+
+    Merge pull request #37 from projectNe10/bsd_license
+    
+    preserve the 2011-12 notice on the files which had this before
+
+commit 96c89138cfaed00f7c57a5c09789c09fc0130561
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Oct 29 11:23:28 2012 +0800
+
+    update the 2011-12 notice
+
+commit 44e12b31d5375f9271c63627ba3c504d2b909343
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Oct 29 10:55:17 2012 +0800
+
+    preserve the 2011-12 notice on the files which had this before
+
+commit 3b2f1a8e81d9ab1392eb1dd645667d4eedb5d720
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 26 17:53:29 2012 +0800
+
+    change license headers
+
+commit 13bf4c00d0ad0e36601035a011ba27ff5bc1e01d
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 26 17:40:35 2012 +0800
+
+    format accordding to code review
+
+commit 9b91c605ea26847e90640020bc3aca198a1fae00
+Merge: a4d7cf2 7854b32
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 26 14:07:53 2012 +0800
+
+    Merge branch 'master' of git://github.com/projectNe10/Ne10
+
+commit 7854b320f2a9313e28d173c96373076e59c1d0f0
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 26 11:39:33 2012 +0800
+
+    change compile option to "-O2"
+
+commit 0aee3468bcc22af941c53a56c5fc52b86062d1da
+Merge: 4424b75 7267c7a
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Thu Oct 25 20:34:19 2012 -0700
+
+    Merge pull request #36 from projectNe10/function_rename
+    
+    add prefix "ne10_" to all the functions
+
+commit 7267c7a218ee8202b259e260ae7e0097d2222817
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 26 11:29:42 2012 +0800
+
+    add prefix "ne10_" to all the functions
+
+commit 4424b75b8dfb8d598653a1889c981bfba9fadc4a
+Merge: ec01a9b a1bb1eb
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Wed Oct 24 01:41:03 2012 -0700
+
+    Merge pull request #35 from projectNe10/dev/yangzhang/bsd_license
+    
+    change the license to New BSD License
+
+commit a1bb1ebe9df5542713ef0fb595f0d2d302478924
+Merge: 6d3f307 ec01a9b
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Oct 24 16:34:56 2012 +0800
+
+    Merge branch 'master' of git://github.com/projectNe10/Ne10 into license
+    
+    Conflicts:
+            README.txt
+
+commit 6d3f3075d00b2b223569ac4e8a59359bd674ac91
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Oct 24 15:10:36 2012 +0800
+
+    remove redundant space
+
+commit ec01a9b2bb9331088a04996b7306a4914cd88c42
+Author: mdupuy <github@internetonastick.net>
+Date:   Tue Oct 23 15:25:03 2012 -0700
+
+    Dual license BSD 3 clause
+    
+    Updating Readme.txt to dual license with BSD 3 clause
+
+commit 17c0d054cc9ac0cf753d4827a05fc47e85b73025
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 19 15:20:39 2012 +0800
+
+    change the license to New BSD License
+
+commit a4d7cf270e4dfeca379d1801e5a7778e7e8c9411
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Oct 19 11:02:42 2012 +0800
+
+    add fir and iir filter function:
+    1. fir
+    2. fir decimate
+    3. fir interpolate
+    4. fir lattice
+    5. fir sparse
+    6. iir lattice
+
+commit abfbddd1123c42339eb0c14bc99b6b5f9028974a
+Merge: 5dc4feb a7d2500
+Author: yangzhang <tomatozy@gmail.com>
+Date:   Wed Oct 10 00:05:30 2012 -0700
+
+    Merge pull request #33 from projectNe10/dev/yangzhang/fft
+    
+    add complex/real fft functions
+
+commit a7d2500ada887eceb377e7832eef544757a77b2b
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Oct 10 14:48:18 2012 +0800
+
+    modified ne10_init function
+
+commit b5a8718e735c4548b4c1e76b147a132e3ce39452
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Oct 10 14:29:59 2012 +0800
+
+    modify macro definition in mask table
+
+commit f8357c04b4a7416675d1b10d1d97edb778b1479c
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Oct 10 14:20:54 2012 +0800
+
+    make the following modification
+    1. removed arm assembly in C file
+    2. modified the interface of rfft
+
+commit fb630aed4c6fe56c83cab172883691f578446839
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Sep 28 16:53:15 2012 +0800
+
+    add notes
+
+commit dc8d51e7b1b44b2402744ddfacd49bf9f5c2fe60
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Sep 27 17:33:17 2012 +0800
+
+    add CFFT/CIFFT and RFFT/RIFFT functions
+
+commit 5dc4feb086d5b40c1e94b6f34c013e9e82a7b178
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Sep 19 16:01:02 2012 +0800
+
+    remove the compile warnings
+
+commit 6fc5ea44528678d2d8d915d6750c615c2b0c5930
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Aug 30 17:50:08 2012 +0800
+
+    fix issues about Android.mk
+
+commit 2b3e208308486e3634d5d5f17aa08a2f18e347cd
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Aug 2 13:57:50 2012 +0800
+
+    reorganize the code directory
+
+commit e8e944797f0eb52f3d99f817b0b985f5fa081a7c
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Jul 24 14:40:53 2012 +0800
+
+    fix bugs in mulcmatvec
+
+commit a2c4a938458118a350e6092acfee1e1ae2019458
+Author: yang <yang.zhang@arm.com>
+Date:   Tue Jul 24 10:52:04 2012 +0800
+
+    fix bugs in invmat
+
+commit 00dd2f1f1cd5d6d0fefb3e214f449abbd348b8cb
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Jul 23 18:24:57 2012 +0800
+
+    fix bugs in detmat
+
+commit 59d2cfa644789a360a2819bbe7891b37e4bfcb43
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Jul 20 11:50:26 2012 +0800
+
+    fix bugs in sub
+
+commit 69af06d38a1c93701016e28401f4b2fef14b177a
+Author: yang <yang.zhang@arm.com>
+Date:   Fri Jul 20 10:58:03 2012 +0800
+
+    fix bugs in mul
+
+commit 9ef7239c71a5d7cef308121df855a9167b8f99cf
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jul 19 17:48:38 2012 +0800
+
+    fix bugs in dot
+
+commit a385ca2c235107b5932b295c82a7ad56cc52db87
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jul 19 14:25:27 2012 +0800
+
+    fix bugs in div
+
+commit b6828d4e3fd8c53be9d84da0b0c40ead479050fc
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jul 19 11:01:12 2012 +0800
+
+    fix bug in cross
+
+commit 847102d0d9023dffca398e3bf2e30a5107871d00
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jul 19 09:49:51 2012 +0800
+
+    fix bugs in add
+
+commit 4d7f8acf48168418b4b9eaa2001a6f37aa71a9d2
+Author: yang <yang.zhang@arm.com>
+Date:   Wed Jul 18 15:16:31 2012 +0800
+
+    fix the bugs in abs
+    
+    1. typo error
+    2. logic error
+
+commit 1e69e0e209acdbbe17785804b1d953076bd2ccb9
+Merge: 721ac5e b95b74b
+Author: yang <yang.zhang@arm.com>
+Date:   Mon Jun 25 11:30:48 2012 +0800
+
+    Merge branch 'master' of github.com:projectNe10/Ne10 into cplusplus
+    
+    Conflicts:
+            ReleaseNote.txt
+
+commit 721ac5eb27bdd111fc50bd5e39954debebdc89a8
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jun 21 14:22:49 2012 +0800
+
+    allow the NE10 to be used in cplusplus programs
+
+commit b95b74bd1b7b4da41eac3521ae7b5993ada49a56
+Author: yang <yang.zhang@arm.com>
+Date:   Thu Jun 21 10:20:53 2012 +0800
+
+    use the CMake to implement build system
+        1. added the CMakeLists.txt for cmake build system
+        2. added the config.cmake for cross-compiling
+        3. copy the NE10_test.c to ./test/ directory for test sample
+        4. updated ReleaseNote
+
+commit 2f07594d0a239212c987266610ebb4dd52b98595
+Merge: 1f3476c a84d3ef
+Author: Matthew DuPuy <matt@internetonastick.net>
+Date:   Wed May 23 23:56:30 2012 -0700
+
+    Merge pull request #21 from projectNe10/dev/raminzaghi-arm/patch0004_03_ABS_bug_fix
+    
+    Dev/raminzaghi arm/patch0004 03 abs bug fix
+
+commit a84d3efabf6aac26db4a76ad4264015eb5fe9122
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Fri May 11 13:13:14 2012 +0000
+
+    ABS bug fix...
+
+commit 4d4b75bbc31a235a494b4d1d1d8e53b2bd894ddb
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed May 9 13:52:20 2012 +0000
+
+    applied review #127.
+
+commit 44e938fa41248b19ec5f94b5eb000352a0a0a604
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue May 8 13:06:47 2012 +0000
+
+    DST==SRC test corrections.
+
+commit a151a5713a3aee76f1bfb55243f055e787674bd2
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue May 8 12:37:02 2012 +0000
+
+    added the new DST==SRC test case to the cross routine.
+
+commit c850b7de72972c71e129dac0c2eaff93f3e84ff5
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue May 8 12:28:06 2012 +0000
+
+    Added header files for cross and dot that were not added to the public repo initially.
+
+commit 1f0cb95867b13e3c87070ee362276a90510c006f
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Thu May 10 14:20:19 2012 +0000
+
+    applied review #126
+
+commit 52629eb534c9ee0a39a85831881d3acd0f869b49
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed May 9 13:47:27 2012 +0000
+
+    applied review #126
+
+commit dcc10bced145c37f01175331c6a816ec62baba18
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue May 8 15:51:53 2012 +0000
+
+    bug fix.
+
+commit 998261202191ff08039f573da9480af762aafe7e
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue May 8 11:10:30 2012 +0000
+
+    added the DST==SRC condition test case to all the applicable units..
+
+commit 1f3476ccddf5adfc6bc4de2d51b6ebb62af83dbf
+Author: David Butcher <dbutcher@arm.com>
+Date:   Wed Apr 11 12:42:13 2012 +0100
+
+    Adding missing header file
+
+commit 4b09c2f95dcc82c328383a3955c9425a0412aa1f
+Author: David Butcher <dbutcher@arm.com>
+Date:   Wed Apr 11 10:24:14 2012 +0100
+
+    Correction to nightly.pl
+
+commit 020e0e7f51ffb853dcc972c350652257a8527559
+Author: David Butcher <dbutcher@arm.com>
+Date:   Wed Apr 11 10:11:57 2012 +0100
+
+    Fixes to test script
+    
+      * Standalone operation (ignore absence of .git directory)
+      * Proper final summary at end of nightly.pl
+
+commit e8bb0299f086a18d2955383e567dc59ff03bd5a9
+Author: David Butcher <dbutcher@arm.com>
+Date:   Tue Apr 10 14:01:16 2012 +0100
+
+    Fix to release note information about known limitations
+
+commit e4ed6f51498440bf2f843aeaaaea0f9c53fe47e7
+Author: David Butcher <dbutcher@arm.com>
+Date:   Tue Apr 10 11:39:46 2012 +0100
+
+    Updated release note for Release candidate
+
+commit 993667ff37f94dff46e01bca5ec629472fd8a4be
+Merge: 69aab15 99036c2
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Tue Apr 10 02:42:04 2012 -0700
+
+    Merge pull request #18 from projectNe10/dev/dbutcher/makefile_cleaning
+    
+    Updated AOSP Makefile, cleaned native Makefile
+
+commit 99036c2fc0d354f6b41f3618949863daaf57b5bd
+Author: David Butcher <dbutcher@arm.com>
+Date:   Fri Apr 6 18:04:13 2012 +0100
+
+    Updated AOSP Makefile, cleaned native Makefile
+    
+    * Adding new files to the AOSP build
+    * Made the default makefile a little more readable
+
+commit 69aab1569856795d34708895e72c2277f6bca826
+Author: Matthew Du Puy <github@internetonastick.net>
+Date:   Thu Apr 5 13:52:00 2012 -0700
+
+    Ignore OS X meta data
+
+commit 66052fc54cfe6fa39547926e5e339ffe23b6e1f9
+Merge: d52e397 a34633d
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:35:53 2012 -0700
+
+    Merge pull request #17 from projectNe10/dev/raminzaghi-arm/patch0003_06_transindent
+    
+    Dev/raminzaghi arm/patch0003 06 transindent
+
+commit d52e397d05ff059b153f61befc75491692e884cb
+Merge: 4c617ce 956e1f7
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:35:31 2012 -0700
+
+    Merge pull request #16 from projectNe10/dev/raminzaghi-arm/patch0003_05_invmat
+    
+    Dev/raminzaghi arm/patch0003 05 invmat
+
+commit 4c617ce5c8b721bcd6c674b048f50518066ec71c
+Merge: 1e6678c f92ae6e
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:35:07 2012 -0700
+
+    Merge pull request #15 from projectNe10/dev/raminzaghi-arm/patch0003_04_detmat
+    
+    Dev/raminzaghi arm/patch0003 04 detmat
+
+commit 1e6678cd11d7d902b6ba9be600fbeed4c9f94c07
+Merge: 7084281 c59ddae
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:34:47 2012 -0700
+
+    Merge pull request #14 from projectNe10/dev/raminzaghi-arm/patch0003_03_mulcmatvec
+    
+    Dev/raminzaghi arm/patch0003 03 mulcmatvec
+
+commit 7084281909b0bd36771a6123d1590228a63beaf0
+Merge: 073539f 9a1b46d
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:34:26 2012 -0700
+
+    Merge pull request #13 from projectNe10/dev/raminzaghi-arm/patch0003_02_mulmat
+    
+    Dev/raminzaghi arm/patch0003 02 mulmat
+
+commit 073539feec73c1c1b28896316354c8481dcf4922
+Merge: 190fe3c d1521aa
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 11:33:35 2012 -0700
+
+    Merge pull request #12 from projectNe10/dev/raminzaghi-arm/patch0003_01_addmat_submat
+    
+    Dev/raminzaghi arm/patch0003 01 addmat submat
+
+commit 190fe3c6e2e6e1d549959c709256a03163470307
+Merge: 0d495cd 2fa2758
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:24:04 2012 -0700
+
+    Merge pull request #11 from projectNe10/dev/raminzaghi-arm/patch0002_complete
+    
+    Dev/raminzaghi arm/patch0002 complete
+
+commit 0d495cd7c08c8fc6363b6d4d7256ad8b2e75ffa6
+Merge: 431fef0 7f14b0c
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:23:45 2012 -0700
+
+    Merge pull request #10 from projectNe10/dev/raminzaghi-arm/patch0002_07_cross_product
+    
+    Dev/raminzaghi arm/patch0002 07 cross product
+
+commit 431fef0980d7cacb72dde1e3dd5699eb4e2363a3
+Merge: 348773c 7baf29a
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:23:25 2012 -0700
+
+    Merge pull request #9 from projectNe10/dev/raminzaghi-arm/patch0002_06_dot_product
+    
+    Dev/raminzaghi arm/patch0002 06 dot product
+
+commit 348773c14ab3b5ae984e6529c3ba61e08c5b125f
+Merge: 342aa92 bcc66ea
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:23:12 2012 -0700
+
+    Merge pull request #8 from projectNe10/dev/raminzaghi-arm/patch0002_05_new_vmla
+    
+    Dev/raminzaghi arm/patch0002 05 new vmla
+
+commit 342aa92d2545215e6acd8218e575cbf7b78747ef
+Merge: a5b2cd1 91e7e0e
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:22:53 2012 -0700
+
+    Merge pull request #7 from projectNe10/dev/raminzaghi-arm/patch0002_04_new_vdiv
+    
+    Dev/raminzaghi arm/patch0002 04 new vdiv
+
+commit a5b2cd1764dd56bbe2a7fd43d4d09f4fda8ebdce
+Merge: 22010a8 ef19797
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:22:36 2012 -0700
+
+    Merge pull request #6 from projectNe10/dev/raminzaghi-arm/patch0002_03_new_vabs
+    
+    Dev/raminzaghi arm/patch0002 03 new vabs
+
+commit 22010a85793c015d627f3e566f1f1d3fb11eddfe
+Merge: 5362621 3201d6f
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:22:18 2012 -0700
+
+    Merge pull request #5 from projectNe10/dev/raminzaghi-arm/patch0002_02_new_vsub
+    
+    Dev/raminzaghi arm/patch0002 02 new vsub
+
+commit 536262157cc3490ccbd53442eedd330d025b657f
+Merge: 1af338d e4eb74f
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:21:40 2012 -0700
+
+    Merge pull request #4 from projectNe10/dev/raminzaghi-arm/patch0002_01_new_vadd
+    
+    Dev/raminzaghi arm/patch0002 01 new vadd
+
+commit 1af338db8fe3e862c7e33c59ef52de142148a69f
+Merge: a6f60f7 8887904
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Thu Apr 5 04:20:36 2012 -0700
+
+    Merge pull request #3 from projectNe10/dev/raminzaghi-arm/patch0002_initial_work
+    
+    preparing the code base for adding new routines.
+
+commit a34633d592f106212b61ebad61ce9e56e5bf6776
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 17:23:52 2012 +0000
+
+    New functions: Matrix transpose and identity matrix routines.
+
+commit b802c2d49172b425d53cad412169b0a599523ef2
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 17:18:10 2012 +0000
+
+    New functions: Matrix transpose and identity matrix routines.
+
+commit 956e1f7553323c865aaf9a7a5ebda212721af4ce
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 16:39:17 2012 +0000
+
+    New functions: Matrix inversion routines.
+
+commit f92ae6eb9e8dadc5cb76cca949109f9fd9fe83dd
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 15:26:28 2012 +0000
+
+    New functions: Matrix determinant routines.
+
+commit fd276d27ad6e20d7a3367bc91881830648b53de3
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 13:09:16 2012 +0000
+
+    New functions: Matrix determinant routines.
+
+commit c59ddaeb75e0d92c83e129df15adc256f2f8d5f1
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 15:19:58 2012 +0000
+
+    New functions: Matrix-vector multiplication routines.
+
+commit 9a1b46da1d7b2c711a2e6c69e5911345c1449fac
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 13:11:19 2012 +0000
+
+    New functions: Matrix multiplication routines.
+
+commit 67ed64b8cb42caf97c2d92f196ef48ffac38ce9b
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 11:28:48 2012 +0000
+
+    New functions: Matrix multiplication routines.
+
+commit d1521aab6cc438a50e4d04e3e56dc6a8704242fe
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 10:56:22 2012 +0000
+
+    New functions: Matrix addition and subtraction.
+
+commit 45b9a7289f5fe552d6fe3a9bf263b03d0917e7fc
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Apr 4 10:56:10 2012 +0000
+
+    New functions: Matrix addition and subtraction.
+
+commit 2fa2758cbd38c3cf32ea28e13c5d099a6458019b
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 11:20:13 2012 +0000
+
+    patch 0002 completed.
+
+commit 7f14b0ccb794efcc45cebafc85759f75e9e563c9
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 11:16:13 2012 +0000
+
+    the cross product routine.
+
+commit 7baf29a667aacdbfdae4ead0c47cdefed6ce7a22
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 11:15:05 2012 +0000
+
+    the dot product routines.
+
+commit bcc66ea0d27e9888a7ed0fd353693b87f8734a81
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:56:08 2012 +0000
+
+    the new vectorized mla routines.
+
+commit 91e7e0eb445f3363f72d795b9caaac9205404dd2
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:52:18 2012 +0000
+
+    the new vectorized division routines.
+
+commit ef197974e3fa24b409f0fc138db41bdc9b3d8fda
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:45:20 2012 +0000
+
+    the new vectorized abs routine.
+
+commit 3201d6f161053bc1620486d751ea2eda0dd265fd
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:30:12 2012 +0000
+
+    the new vector-sub routines.
+
+commit e4eb74fa24a8987ed6e0f0e4132b09fdca58c237
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:25:29 2012 +0000
+
+    the new vector-add routines.
+
+commit 8887904eeea5ec6a26b223f3fe3b5d48495689fa
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Tue Apr 3 10:16:03 2012 +0000
+
+    preparing the code base for adding new routines.
+
+commit a6f60f7f3e221b6c17237695fca037606f9dcb1c
+Author: Matthew DuPuy <matt@internetonastick.net>
+Date:   Thu Mar 29 15:58:24 2012 -0700
+
+    Added the disclaimer:
+    Each function is implemented in C, ARM Assembly and NEON code as a basis for
+    comparison. Assembly versions, while efficient, are not intended as
+    best-practice examples. NEON versions are intended as best-practice examples.
+
+commit 8941f2f1d647a368e761bb8b0ba5186ba96cd804
+Merge: 3291df1 944424c
+Author: dbutcher-arm <dbutcher@arm.com>
+Date:   Wed Mar 7 10:12:52 2012 -0800
+
+    Merge pull request #1 from projectNe10/dev/raminzaghi-arm/patch0001_minorfixes
+    
+    Minor fixes, typos and build cleanup
+
+commit 944424c8dabc81f84b3e1916898da225551ada24
+Author: Ramin Zaghi <ramin@arm.com>
+Date:   Wed Mar 7 17:34:13 2012 +0000
+
+    A few minor fixes for the initial release.
+
+commit 3291df14aadb445a0416b2fc28fd614634be945b
+Author: David Butcher <dbutcher@arm.com>
+Date:   Mon Mar 5 18:17:20 2012 +0000
+
+    Updated status in release note
+
+commit c0b99b56242a0d4d1a80be8bb6268e375633c5ca
+Author: David Butcher <dbutcher@arm.com>
+Date:   Fri Mar 2 15:06:21 2012 +0000
+
+    Added copyright messages
+
+commit 6ec8b4e31e891c33c49b959b6ae7c7b202502c6a
+Author: David Butcher <dbutcher@arm.com>
+Date:   Fri Mar 2 15:03:03 2012 +0000
+
+    Updated Documentation
+
+commit b1a750f68ffa52dc9a817f6d70f2515381ba7ac6
+Author: Dave Butcher <david.butcher@arm.com>
+Date:   Thu Oct 27 16:06:46 2011 +0100
+
+    Fixes against RC1
+
+commit 01a5c1b90b3d3a8b82002b6b1ab68e82e797b0e0
+Author: David Butcher <dbutcher@arm.com>
+Date:   Thu Mar 1 14:48:25 2012 +0000
+
+    Added Linaro gcc link
+
+commit cc397c5ac6f9335717fbc642dec8237839347bfe
+Author: David Butcher <dbutcher@arm.com>
+Date:   Thu Mar 1 14:33:23 2012 +0000
+
+    Doc fixes
+
+commit ba9393ea71ff8007908fe0f37860e85fdde1cab4
+Author: David Butcher <dbutcher@arm.com>
+Date:   Thu Mar 1 12:06:36 2012 +0000
+
+    Initial Release
